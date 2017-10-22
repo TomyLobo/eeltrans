@@ -1,0 +1,11 @@
+Debug/
+Release/
+
+*.aps
+*.dep
+*.mak
+*.ncb
+*.opt
+*.plg
+*.tlh
+*.tli

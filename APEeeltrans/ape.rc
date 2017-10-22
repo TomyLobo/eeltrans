@@ -1,0 +1,199 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Englisch (USA) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONFIG DIALOG DISCARDABLE  0, 0, 230, 213
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Activate AVSTrans Support",IDC_ENABLED_AVSTRANS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,6,20,103,13
+    CONTROL         "Activate Code Logging",IDC_ENABLED_LOG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,6,6,89,13
+    CONTROL         "Translate first level",IDC_TRANSFIRST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,35,103,13
+    CONTROL         "Read Comment Codes",IDC_READCOMMENTCODES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,50,103,13
+    LTEXT           "Using Translator v",IDC_STATIC,17,68,59,8
+    LTEXT           "0.00.00",IDC_VERSION,76,68,34,8
+    EDITTEXT        IDC_EDIT_AUTOPREFIX,6,88,221,124,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | 
+                    WS_VSCROLL
+    LTEXT           "Global code:",IDC_STATIC,6,80,43,8
+    EDITTEXT        IDC_EDIT_LOGPATH,95,6,132,12,ES_AUTOHSCROLL
+END
+
+IDD_CONF_ERR DIALOG DISCARDABLE  0, 0, 230, 213
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Activate AVSTrans Support",IDC_ENABLED_AVSTRANS,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,6,20,103,13
+    CONTROL         "Activate Code Logging",IDC_ENABLED_LOG,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,6,6,146,13
+    CONTROL         "Translate first level",IDC_TRANSFIRST,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,17,35,103,13
+    CONTROL         "Read Comment Codes",IDC_READCOMMENTCODES,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,17,50,103,13
+    LTEXT           "Using Translator v",IDC_STATIC,17,68,59,8,WS_DISABLED
+    LTEXT           "0.00.00",IDC_VERSION,76,68,34,8,WS_DISABLED
+    EDITTEXT        IDC_EDIT_AUTOPREFIX,6,88,221,124,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | 
+                    WS_VSCROLL
+    LTEXT           "Global code:",IDC_STATIC,6,80,43,8,WS_DISABLED
+    LTEXT           "You only need one instance of this component per preset. Please delete either one.",
+                    IDC_STATIC,152,6,75,50
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 227
+        VERTGUIDE, 17
+        VERTGUIDE, 76
+        VERTGUIDE, 95
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 212
+        HORZGUIDE, 41
+        HORZGUIDE, 56
+        HORZGUIDE, 68
+        HORZGUIDE, 88
+    END
+
+    IDD_CONF_ERR, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 227
+        VERTGUIDE, 17
+        VERTGUIDE, 76
+        VERTGUIDE, 152
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 212
+        HORZGUIDE, 41
+        HORZGUIDE, 56
+        HORZGUIDE, 68
+        HORZGUIDE, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,25,0,1
+ PRODUCTVERSION 1,25,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "!\0"
+            VALUE "FileDescription", "AVSTrans Automation\0"
+            VALUE "FileVersion", "1, 25, 0, 1\0"
+            VALUE "InternalName", "eeltrans\0"
+            VALUE "LegalCopyright", "Copyright © 2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "eeltrans.ape\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "! eeltrans\0"
+            VALUE "ProductVersion", "1, 25, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // Englisch (USA) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
