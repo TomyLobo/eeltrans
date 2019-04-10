@@ -1,6 +1,8 @@
+#ifndef AVSTRANS_CLI
 #include <windows.h>
 //#include <winuser.h>
 //#include <winbase.h>
+#endif
 #ifdef _MSC_VER
 #pragma warning( disable:4786 )
 #endif
@@ -488,7 +490,9 @@ string parsecommand(string input, int indent, EnumMode Mode) {
 		return input;
 	}
 }
+#ifndef AVSTRANS_CLI
 HINSTANCE g_hDllInstance;
+#endif
 
 
 string HandlePreprocessor(string Preprocessor) {
