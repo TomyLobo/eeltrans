@@ -1,0 +1,46 @@
+# Build Configuration for Travis
+# https://travis-ci.org
+
+# Adjusted from https://raw.githubusercontent.com/KhronosGroup/Vulkan-Samples/690fc0abf18d092bc21dbbad5b62f74612574771/.travis.yml
+# With openssl install code adjusted from https://github.com/aspnet/Security/raw/238f461488746608108d2358a2a3ad3a1117ee9f/.travis.yml
+
+language:
+  - cpp
+
+matrix:
+  # Show final status immediately if a test fails.
+  fast_finish: true
+  include:
+    # Mac OS X Clang release build.
+    - os: linux
+      compiler: gcc
+
+branches:
+  only:
+    - master
+
+script:
+  - pushd AVSTrans_cpp
+  - make clean all
+  - ./avstrans-cli <<< 'a=b=c;'
+  - popd
+
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "Travis build"
+  - git config --local user.email "tomylobo@nurfuerspam.de"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: UFimcLZ5BCgyWVeyNRuySqwg/FNgBEBPiu5YMiX8jcbtxDdZQzjPSm3BosG2IbaM2nuizybre8k3jZ8bYNkbwr8dXf21/8A42bTCFeWSNjXUUGAm20MKHPUqZyPEGuH5uPwBuJsipTzjvjTnRxHxpaHxcvW0qgbkFIaVPHLmEYMgOAGr4ZYPJGIBYtZ3y3FDbHzxKGPEZK/TYAZ6WHJpiS75CO9G9Z1DH6uWQl/6b+yHiMRwEFInTbpNsw9uHh8lLP5Usd553PSUVlu7a5hmV71M102o0XUWcrWK74cq0ycCPaBQSdhu77BHdDEUABeT62jLsJz6JxG87RRKL7XhfdmE7ZCAM+OlVcr/Rsu3vu0IBvgkcpm1MRlEve3AFUm7SdIzLwZWLTS1IfKuQnBon7uE7MQYLuK8ClctjhJs3Pn1CDtfGi03ldtL9OEiyzSA7G84hRBaYZGHxl6fHjir5Hs/XYT115kgJy5/+xnEBgZ3fiT+aLAFeU2FTJ7SuZZBlfM+GkA451pk9B579b69G2atqwSqBdMvPzAtZE5uXehO9NFHqsod8R5sZzQzej4KuG9bEFtdzbUuvus3lmGrd1aA/3lKgLTH+QgQZLirWl9T3gMAm0YG9OyKstPSoz3PnWU5DDE+J8ulUpJRTVbzlklTjIB2XJfPsgZa/Sk6ZU0=
+  file_glob: true
+  file: AVSTrans_cpp/avstrans-cli*
+  skip_cleanup: true
+  # This makes travis tag the current commit, instead of the current commit on the default branch
+  target_commitish: $TRAVIS_COMMIT
+  prerelease: true
+  on:
+    repo: TomyLobo/eeltrans
+    branch: master
